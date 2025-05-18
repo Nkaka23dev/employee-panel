@@ -1,43 +1,35 @@
-# EmployeePanel
+# Employee Panel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+## Getting Started
+
+```bash
+git clone https://github.com/Nkaka23dev/employee-panel.git
+```
+
+```bash
+npm install
+```
+```bash
+ng serve
+```
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
 ## Suggested color palatte:
 
 | Role               | Color Code | Usage Example                     |
 | ------------------ | ---------- | --------------------------------- |
-| **Primary**        | `#1E88E5`  | Buttons, links, active tabs       |
-| **Primary Hover**  | `#1565C0`  | Hover state for primary elements  |
-| **Secondary**      | `#546E7A`  | Sidebar, cards, secondary buttons |
-| **Accent**         | `#00ACC1`  | Icons, highlights, chips          |
+| **Primary**        | `#8ACC50`  | Buttons, links, active tabs       |
+| **Primary Hover**  | `#75B443`  | Hover state for primary elements  |
+| **Secondary**      | `#001342`  | Sidebar, cards, secondary buttons |
+| **Accent**         | `#00B8D4`  | Icons, highlights, chips          |
 | **Background**     | `#F5F7FA`  | Page background                   |
 | **Surface**        | `#FFFFFF`  | Cards, modals, panels             |
-| **Text Primary**   | `#212121`  | Headings, main content            |
-| **Text Secondary** | `#757575`  | Subtitles, labels, descriptions   |
+| **Text Primary**   | `#001342`  | Headings, main content            |
+| **Text Secondary** | `#5C6B7A`  | Subtitles, labels, descriptions   |
 | **Success**        | `#43A047`  | Success alerts, status indicators |
 | **Warning**        | `#FB8C00`  | Warnings, toasts                  |
 | **Error**          | `#E53935`  | Error messages, invalid inputs    |
+
