@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */ 
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+/* === Custom Primary (Blue) === */
+$custom-blue: (
+  50:  #E3F2FD,
+  100: #BBDEFB,
+  200: #90CAF9,
+  300: #64B5F6,
+  400: #42A5F5,
+  500: #2196F3,
+  600: #1E88E5, // Primary
+  700: #1976D2,
+  800: #1565C0, // Hover
+  900: #0D47A1,
+  A100: #82B1FF,
+  A200: #448AFF,
+  A400: #2979FF,
+  A700: #2962FF,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+/* === Custom Accent (Cyan) === */
+$custom-accent: (
+  100: #B2EBF2,
+  200: #80DEEA,
+  300: #4DD0E1,
+  400: #26C6DA,
+  500: #00ACC1, // Accent
+  600: #0097A7,
+  700: #00838F,
+  contrast: (
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: white,
+    600: white,
+    700: white,
+  )
+);
+
+/* === Define Theme Palettes === */
+$employee-panel-primary: mat.define-palette($custom-blue, 600, 500, 800);
+$employee-panel-accent: mat.define-palette($custom-accent, 500, 400, 600);
+$employee-panel-warn: mat.define-palette(mat.$red-palette, 500);
+
+/* === Custom Backgrounds === */
+$employee-panel-background: (
+  background: #F5F7FA, // App background
+  card: #FFFFFF,
+  dialog: #FFFFFF,
+  hover: #F1F1F1,
+  status-bar: #E0E0E0,
+  app-bar: #FFFFFF,
+);
+
+/* === Define Complete Theme === */
+$employee-panel-theme: mat.define-light-theme((
+  color: (
+    primary: $employee-panel-primary,
+    accent: $employee-panel-accent,
+    warn: $employee-panel-warn,
+    background: $employee-panel-background,
+  ),
+  typography: mat.define-typography-config(),
+));
+
+/* === Apply Theme === */
+@include mat.core();
+@include mat.all-component-themes($employee-panel-theme);
+
+/* === Global Styles === */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #F5F7FA;
+  color: #212121; // Text Primary
+}
+
+
