@@ -25,3 +25,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Suggested color palatte:
+
+| Role               | Color Code | Usage Example                     |
+| ------------------ | ---------- | --------------------------------- |
+| **Primary**        | `#1E88E5`  | Buttons, links, active tabs       |
+| **Primary Hover**  | `#1565C0`  | Hover state for primary elements  |
+| **Secondary**      | `#546E7A`  | Sidebar, cards, secondary buttons |
+| **Accent**         | `#00ACC1`  | Icons, highlights, chips          |
+| **Background**     | `#F5F7FA`  | Page background                   |
+| **Surface**        | `#FFFFFF`  | Cards, modals, panels             |
+| **Text Primary**   | `#212121`  | Headings, main content            |
+| **Text Secondary** | `#757575`  | Subtitles, labels, descriptions   |
+| **Success**        | `#43A047`  | Success alerts, status indicators |
+| **Warning**        | `#FB8C00`  | Warnings, toasts                  |
+| **Error**          | `#E53935`  | Error messages, invalid inputs    |
