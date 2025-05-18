@@ -30,14 +30,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 | Role               | Color Code | Usage Example                     |
 | ------------------ | ---------- | --------------------------------- |
-| **Primary**        | `#1E88E5`  | Buttons, links, active tabs       |
-| **Primary Hover**  | `#1565C0`  | Hover state for primary elements  |
-| **Secondary**      | `#546E7A`  | Sidebar, cards, secondary buttons |
-| **Accent**         | `#00ACC1`  | Icons, highlights, chips          |
+| **Primary**        | `#8ACC50`  | Buttons, links, active tabs       |
+| **Primary Hover**  | `#75B443`  | Hover state for primary elements  |
+| **Secondary**      | `#001342`  | Sidebar, cards, secondary buttons |
+| **Accent**         | `#00B8D4`  | Icons, highlights, chips          |
 | **Background**     | `#F5F7FA`  | Page background                   |
 | **Surface**        | `#FFFFFF`  | Cards, modals, panels             |
-| **Text Primary**   | `#212121`  | Headings, main content            |
-| **Text Secondary** | `#757575`  | Subtitles, labels, descriptions   |
+| **Text Primary**   | `#001342`  | Headings, main content            |
+| **Text Secondary** | `#5C6B7A`  | Subtitles, labels, descriptions   |
 | **Success**        | `#43A047`  | Success alerts, status indicators |
 | **Warning**        | `#FB8C00`  | Warnings, toasts                  |
 | **Error**          | `#E53935`  | Error messages, invalid inputs    |
+
