@@ -1,14 +1,29 @@
 import { Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { OthersComponent } from './others/others.component';
+import { BenefitsComponent } from './benefits/benefits.component';
+import { UsersComponent } from './users/users.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./dashboard/dashboard.component').then((m) => m.DashboardComponent)
+    component: DashboardComponent
   },
   {
     path: 'employees',
-    loadComponent: () =>
-      import('./employee/employee.component').then((m) => m.EmployeeComponent)
+    component: EmployeeComponent
+  },
+   {
+    path: 'benefits',
+    component: BenefitsComponent
+  },
+   {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'others',
+    component: OthersComponent
   }
 ];

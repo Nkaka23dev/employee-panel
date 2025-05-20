@@ -3,35 +3,57 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { Employee } from '../models/employee.model';
 
 // TODO: Replace this with your own data model type
+export interface BenefitsItem {
+  name: string;
+  id: number;
+}
+
+// TODO: replace this with real data from your application
+const EXAMPLE_DATA: BenefitsItem[] = [
+  {id: 1, name: 'Hydrogen'},
+  {id: 2, name: 'Helium'},
+  {id: 3, name: 'Lithium'},
+  {id: 4, name: 'Beryllium'},
+  {id: 5, name: 'Boron'},
+  {id: 6, name: 'Carbon'},
+  {id: 7, name: 'Nitrogen'},
+  {id: 8, name: 'Oxygen'},
+  {id: 9, name: 'Fluorine'},
+  {id: 10, name: 'Neon'},
+  {id: 11, name: 'Sodium'},
+  {id: 12, name: 'Magnesium'},
+  {id: 13, name: 'Aluminum'},
+  {id: 14, name: 'Silicon'},
+  {id: 15, name: 'Phosphorus'},
+  {id: 16, name: 'Sulfur'},
+  {id: 17, name: 'Chlorine'},
+  {id: 18, name: 'Argon'},
+  {id: 19, name: 'Potassium'},
+  {id: 20, name: 'Calcium'},
+];
 
 /**
- * Data source for the Employee view. This class should
+ * Data source for the Benefits view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class EmployeeDataSource extends DataSource<Employee> {
-  data: Employee[] = [];
+export class BenefitsDataSource extends DataSource<BenefitsItem> {
+  data: BenefitsItem[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
- 
-  constructor(items: Employee[]) {
+
+  constructor() {
     super();
-    this.data.push(...items);
   }
 
-  setEmployees(data: Employee[]) {
-      this.data = [...data];
-  }
- 
   /**
    * Connect this data source to the table. The table will only update when
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<Employee[]> {
+  connect(): Observable<BenefitsItem[]> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -54,7 +76,7 @@ export class EmployeeDataSource extends DataSource<Employee> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: Employee[]): Employee[] {
+  private getPagedData(data: BenefitsItem[]): BenefitsItem[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
       return data.splice(startIndex, this.paginator.pageSize);
@@ -67,7 +89,7 @@ export class EmployeeDataSource extends DataSource<Employee> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: Employee[]): Employee[] {
+  private getSortedData(data: BenefitsItem[]): BenefitsItem[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -75,8 +97,8 @@ export class EmployeeDataSource extends DataSource<Employee> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.firstName, b.firstName, isAsc);
-        case 'id': return compare(+a.lastName, +b.lastName, isAsc);
+        case 'name': return compare(a.name, b.name, isAsc);
+        case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
     });

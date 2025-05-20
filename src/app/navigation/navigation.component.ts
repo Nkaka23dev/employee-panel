@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { EmployeeComponent } from '../employee/employee.component';
 
 @Component({
   selector: 'app-navigation',
@@ -25,7 +24,6 @@ import { EmployeeComponent } from '../employee/employee.component';
     MatIconModule,
     AsyncPipe,
     DashboardComponent,
-    EmployeeComponent,
     RouterOutlet,
     RouterModule
   ]
