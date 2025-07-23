@@ -1,6 +1,7 @@
 import { EmployeeDTO } from "./backends/employee.dto";
 
 export class Employee {
+  id: number;
   firstName: string;
   lastName: string;
   fullName: string;
@@ -17,6 +18,7 @@ export class Employee {
   lastModifiedOn: Date;
 
   constructor(employeeDTO: EmployeeDTO) {
+    this.id = employeeDTO.id;
     this.firstName = employeeDTO.firstName;
     this.lastName = employeeDTO.lastName;
     this.fullName = `${employeeDTO.firstName} ${employeeDTO.lastName}`;
