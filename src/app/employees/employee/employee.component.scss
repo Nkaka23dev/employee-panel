@@ -1,22 +1,22 @@
 .full-width-table {
-  width: 100%;
+    width: 100%;
 }
 
 // ::ng-deep .mat-mdc-paginator-page-size-label {
-//   color: #8ACC50; 
+//   color: #8ACC50;
 //   font-weight: bold;
 // }
 // ::ng-deep .mat-mdc-paginator-range-label{
-//   color: #8ACC50; 
+//   color: #8ACC50;
 //   font-weight: bold;
 // }
-.actions{
-  cursor: pointer;
+.actions {
+    cursor: pointer;
 }
 
 .mat-mdc-row {
     cursor: pointer;
 }
 .mat-mdc-row:hover {
-  background-color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 98%);
 }

@@ -12,35 +12,34 @@ import { LoginComponent } from './login/login.component';
 import { MainlayoutComponent } from './layout/main-layout/mainlayout.component';
 
 export const routes: Routes = [
-   {
-  path: '',
-  redirectTo: '/dashboard',
-  pathMatch: 'full'
- },
- {
-  path: 'login',
-  component: LoginComponent
- },
- {
-  path: '',
-  component: MainlayoutComponent,
-  children: [
-      { path: 'dashboard', component: DashboardComponent }, 
-      { path: 'employees', component: EmployeeComponent },
-      {
-        path: 'employees/edit/:id',
-        component: EditEmployeeComponent,
-        resolve: { employee: EmployeeResolver }
-      },
-      { path: 'department', component: DepartmentComponent },
-      { path: 'benefits', component: BenefitsComponent },
-      { path: 'users', component: UsersComponent },
-      { path: 'others', component: OthersComponent },
-    
-  ]
- },
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+    {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full',
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+    },
+    {
+        path: '',
+        component: MainlayoutComponent,
+        children: [
+            { path: 'dashboard', component: DashboardComponent },
+            { path: 'employees', component: EmployeeComponent },
+            {
+                path: 'employees/edit/:id',
+                component: EditEmployeeComponent,
+                resolve: { employee: EmployeeResolver },
+            },
+            { path: 'department', component: DepartmentComponent },
+            { path: 'benefits', component: BenefitsComponent },
+            { path: 'users', component: UsersComponent },
+            { path: 'others', component: OthersComponent },
+        ],
+    },
+    {
+        path: '**',
+        component: NotFoundComponent,
+    },
 ];

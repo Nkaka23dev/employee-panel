@@ -6,32 +6,39 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import {
+    RouterLink,
+    RouterLinkActive,
+    RouterModule,
+    RouterOutlet,
+} from '@angular/router';
 import { map, Observable, shareReplay } from 'rxjs';
 
 @Component({
-  selector: 'app-mainlayout',
-  standalone: true,
-  imports: [  
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    AsyncPipe,
-    RouterLinkActive,
-    RouterLink,
-    RouterOutlet,
-    RouterModule],
-  templateUrl: './mainlayout.component.html',
-  styleUrl: './mainlayout.component.scss'
+    selector: 'app-mainlayout',
+    standalone: true,
+    imports: [
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        AsyncPipe,
+        RouterLinkActive,
+        RouterLink,
+        RouterOutlet,
+        RouterModule,
+    ],
+    templateUrl: './mainlayout.component.html',
+    styleUrl: './mainlayout.component.scss',
 })
 export class MainlayoutComponent {
-   private breakpointObserver = inject(BreakpointObserver);
- 
-   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-     .pipe(
-       map(result => result.matches),
-       shareReplay()
-     );
+    private breakpointObserver = inject(BreakpointObserver);
+
+    isHandset$: Observable<boolean> = this.breakpointObserver
+        .observe(Breakpoints.Handset)
+        .pipe(
+            map((result) => result.matches),
+            shareReplay()
+        );
 }
