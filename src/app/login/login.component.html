@@ -1,19 +1,77 @@
+@if (isLoading) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
 <div class="container">
-    <mat-card class="row" appearance="outlined">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Login Form</mat-card-title>
-            <mat-card-subtitle
-                >To continue with employee panel</mat-card-subtitle
-            >
-        </mat-card-header>
-        <mat-card-content>
-            <p>
-                The Shiba Inu is the smallest of the six original and distinct
-                spitz breeds of dog from Japan. A small, agile dog that copes
-                very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-            </p>
-        </mat-card-content>
-    </mat-card>
+    <div class="row">
+        <div class="col">
+            <div class="title">
+                <h1>Login</h1>
+                <h3>to access employee panel dashboard</h3>
+            </div>
+
+            <div class="form-wrapper">
+                <form class="form-wrapper-group">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input
+                            matInput
+                            type="email"
+                            placeholder="e.g. johndoe@gmail.com"
+                            name="email"
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input
+                            matInput
+                            [type]="hidePassword ? 'password' : 'text'"
+                            placeholder="Enter your password"
+                            name="password"
+                        />
+                        <button
+                            mat-icon-button
+                            matSuffix
+                            type="button"
+                            (click)="hidePassword = !hidePassword"
+                            [attr.aria-label]="'Toggle password visibility'"
+                            [attr.aria-pressed]="!hidePassword"
+                        >
+                            <mat-icon>{{
+                                hidePassword ? 'visibility_off' : 'visibility'
+                            }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <div class="row-between">
+                        <mat-checkbox>Remember Me</mat-checkbox>
+                        <a class="forgot-password" href="#">Forgot Password?</a>
+                    </div>
+
+                    <button
+                        (click)="login()"
+                        mat-raised-button
+                        color="primary"
+                        class="full-width"
+                        type="submit"
+                    >
+                        Login
+                    </button>
+                </form>
+
+                <div class="register-link">
+                    <p>
+                        Not registered yet?
+                        <b class="account-link">
+                            Create an account
+                            <mat-icon
+                                class="arrow-icon"
+                                fontIcon="arrow_forward"
+                            ></mat-icon>
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

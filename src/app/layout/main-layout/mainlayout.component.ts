@@ -6,13 +6,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+
 import {
+    Router,
     RouterLink,
     RouterLinkActive,
     RouterModule,
     RouterOutlet,
 } from '@angular/router';
 import { map, Observable, shareReplay } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-mainlayout',
@@ -27,6 +31,7 @@ import { map, Observable, shareReplay } from 'rxjs';
         RouterLinkActive,
         RouterLink,
         RouterOutlet,
+        MatCardModule,
         RouterModule,
     ],
     templateUrl: './mainlayout.component.html',
@@ -34,6 +39,8 @@ import { map, Observable, shareReplay } from 'rxjs';
 })
 export class MainlayoutComponent {
     private breakpointObserver = inject(BreakpointObserver);
+    private authService = inject(AuthService);
+    private route = inject(Router);
 
     isHandset$: Observable<boolean> = this.breakpointObserver
         .observe(Breakpoints.Handset)
@@ -41,4 +48,8 @@ export class MainlayoutComponent {
             map((result) => result.matches),
             shareReplay()
         );
+    logout() {
+        this.authService.logout();
+        this.route.navigate(['/login']);
+    }
 }

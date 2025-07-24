@@ -7,26 +7,64 @@
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false"
     >
-        <mat-toolbar>Menu</mat-toolbar>
+        <!-- <mat-toolbar>Menu</mat-toolbar> -->
+        <div class="nav-header-container">
+            <div class="logo-container">
+                <img src="./assets/logo.webp" class="logo" alt="" />
+            </div>
+            <mat-card>
+                <mat-card-content class="header">
+                    <p class="username">
+                        <strong>Eric Nkaka</strong><br />ericnkaka
+                    </p>
+
+                    <br />
+
+                    <button
+                        (click)="logout()"
+                        mat-raised-button
+                        color="primary"
+                    >
+                        Logout
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
         <mat-nav-list>
-            <a mat-list-item routerLink="/dashboard" routerLinkActive="active"
-                >Dashboard</a
+            <a
+                mat-list-item
+                routerLink="/dashboard"
+                class="container"
+                routerLinkActive="active"
             >
-            <a mat-list-item routerLink="/employees" routerLinkActive="active"
-                >Employees</a
+                <mat-icon matListIcon class="nav-icon">dashboard</mat-icon>
+                <span class="nav-text">Dashboard</span>
+            </a>
+
+            <a mat-list-item routerLink="/employees" routerLinkActive="active">
+                <mat-icon matListIcon class="nav-icon">people</mat-icon>
+                <span class="nav-text">Employees</span>
+            </a>
+
+            <a
+                mat-list-item
+                routerLink="/benefits"
+                routerLinkActive="active"
+                class="container"
             >
-            <a mat-list-item routerLink="/benefits" routerLinkActive="active"
-                >Benefits</a
-            >
-            <a mat-list-item routerLink="/users" routerLinkActive="active"
-                >Users</a
-            >
-            <a mat-list-item routerLink="/department" routerLinkActive="active"
-                >Department</a
-            >
-            <a mat-list-item routerLink="/others" routerLinkActive="active"
-                >Others</a
-            >
+                <mat-icon matListIcon class="nav-icon">card_giftcard</mat-icon>
+                <span class="nav-text">Benefits</span>
+            </a>
+
+            <a mat-list-item routerLink="/users" routerLinkActive="active">
+                <mat-icon matListIcon class="nav-icon">person</mat-icon>
+                <span class="nav-text">Users</span>
+            </a>
+
+            <a mat-list-item routerLink="/department" routerLinkActive="active">
+                <mat-icon matListIcon class="nav-icon">apartment</mat-icon>
+                <span class="nav-text">Department</span>
+            </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

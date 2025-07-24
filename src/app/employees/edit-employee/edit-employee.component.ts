@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { EmployeeService } from '../../services/employee.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,8 +10,4 @@ import { Observable } from 'rxjs';
 })
 export class EditEmployeeComponent {
     emp$!: Observable<any>;
-    constructor(private emp: EmployeeService) {}
-    @Input() set(employeeId: number) {
-        // this.emp$ = this.emp.getEmployeeById(employeeId);
-    }
 }

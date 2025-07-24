@@ -39,7 +39,8 @@ export class EmployeeService {
         return this.api.get<Employee>(`employee/${id}`).pipe(
             map((data) => new Employee(data)),
             tap((data) => {
-                debugger;
+                console.log(data, 'data');
+                // debugger;
             })
         );
     }

@@ -10,6 +10,7 @@ import { DepartmentComponent } from './department/department.component';
 import { EmployeeResolver } from './services/routes-resolver.service';
 import { LoginComponent } from './login/login.component';
 import { MainlayoutComponent } from './layout/main-layout/mainlayout.component';
+import { AuthGuard } from './services/guards/authguard';
 
 export const routes: Routes = [
     {
@@ -25,7 +26,11 @@ export const routes: Routes = [
         path: '',
         component: MainlayoutComponent,
         children: [
-            { path: 'dashboard', component: DashboardComponent },
+            {
+                path: 'dashboard',
+                component: DashboardComponent,
+                canActivate: [AuthGuard],
+            },
             { path: 'employees', component: EmployeeComponent },
             {
                 path: 'employees/edit/:id',
